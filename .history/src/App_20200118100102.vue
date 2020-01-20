@@ -39,8 +39,8 @@
         </div>
       </v-container>
     </v-content>
-    <v-footer color="indigo" app class="text-xs-center">
-      <span class="white--text text-center">&copy; Sifon Isaac, 2019</span>
+    <v-footer color="indigo" app class="text-center">
+      <span class="white--text">&copy; Sifon Isaac 2018</span>
     </v-footer>
   </v-app>
 </template>

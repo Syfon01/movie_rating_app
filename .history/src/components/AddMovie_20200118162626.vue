@@ -53,12 +53,12 @@ export default {
       v => !!v || 'Movie name is required',
     ],
     genreRules: [
-      v => !!v || 'Movie genre year is required',
-      v => (v && v.length <= 80) || 'Genre must be less than equal to 80 characters.',
-    ],
-    releaseRules: [
-      v => !!v || 'Movie release year is required',
-    ],
+v => !!v || 'Movie genre year is required',
+v => (v && v.length <= 80) || 'Genre must be less than equal to 80characters.',
+],
+releaseRules: [
+v => !!v || 'Movie release year is required',
+],
     select: null,
     years: [
       '2018',

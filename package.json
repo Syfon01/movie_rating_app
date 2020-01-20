@@ -14,10 +14,18 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.1",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.9",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
+    "vue-swal": "^1.0.0",
     "vuetify": "^2.2.4"
   },
   "devDependencies": {

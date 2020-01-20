@@ -19,15 +19,11 @@
       outlined
       v-model="release_year"
       :items="years"
-      required
-      :rules="releaseRules"
     ></v-select>
     <v-text-field
       label="Movie Genre"
-      outlined
+      out
       v-model="genre"
-      required
-      :rules="genreRules"
     ></v-text-field>
     <v-btn
       @click="submit"
@@ -39,8 +35,6 @@
   </v-form>
 </template>
 <script>
-import axios from 'axios';
-
 export default {
   name: 'AddMovie',
   data: () => ({
@@ -51,13 +45,6 @@ export default {
     release_year: '',
     nameRules: [
       v => !!v || 'Movie name is required',
-    ],
-    genreRules: [
-      v => !!v || 'Movie genre year is required',
-      v => (v && v.length <= 80) || 'Genre must be less than equal to 80 characters.',
-    ],
-    releaseRules: [
-      v => !!v || 'Movie release year is required',
     ],
     select: null,
     years: [
@@ -71,27 +58,7 @@ export default {
     submit() {
       if (this.$refs.form.validate()) {
         // Perform next action
-        return axios({
-          method: 'post',
-          data: {
-            name: this.name,
-            description: this.description,
-            release_year: this.release_year,
-            genre: this.genre,
-          },
-          url: 'http://localhost:8081/movies',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
-          .then(() => {
-            this.$router.push({ name: 'home' });
-            this.$refs.form.reset();
-          })
-          .catch(() => {
-          });
       }
-      return true;
     },
     clear() {
       this.$refs.form.reset();

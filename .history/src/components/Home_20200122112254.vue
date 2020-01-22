@@ -4,7 +4,7 @@
       <v-card>
         <v-card-title primary-title>
           <div>
-            <div class="title">{{ movie.name }}</div>
+            <div class="headline">{{ movie.name }}</div>
             <span class="grey--text subtitle-2">{{ movie.release_year }} ‧ {{
             movie.genre }}</span>
           </div>

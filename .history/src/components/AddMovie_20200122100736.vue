@@ -94,11 +94,7 @@ export default {
             this.$refs.form.reset();
           })
           .catch(() => {
-            this.$swal(
-              'Oh oo!',
-              'Could not add the movie!',
-              'error',
-            );
+            
           });
       }
       return true;

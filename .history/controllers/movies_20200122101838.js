@@ -11,7 +11,7 @@ module.exports.controller = (app) => {
         movies,
       });
     });
-  });
+  })
   // add a new movie
   app.post('/movies', (req, res) => {
     const newMovie = new MovieSchema({

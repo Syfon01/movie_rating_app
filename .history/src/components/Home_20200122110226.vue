@@ -1,11 +1,11 @@
 <template>
-  <v-layout row wrap px-3>
-    <v-flex xs6 sm6 md4 lg4 px-3 py-3 v-for="movie in movies" :key="movie._id">
+  <v-layout row wrap>
+    <v-flex xs4 v-for="movie in movies" :key="movie._id">
       <v-card>
         <v-card-title primary-title>
           <div>
-            <div class="title">{{ movie.name }}</div>
-            <span class="grey--text subtitle-2">{{ movie.release_year }} ‧ {{
+            <div class="headline">{{ movie.name }}</div>
+            <span class="grey--text">{{ movie.release_year }} ‧ {{
             movie.genre }}</span>
           </div>
         </v-card-title>
@@ -23,7 +23,7 @@ export default {
   name: 'Home',
   data() {
     return {
-      movies: [],
+      movie: [],
     };
   },
   mounted() {
@@ -36,12 +36,13 @@ export default {
         url: 'http://localhost:8081/movies',
       })
         .then((response) => {
-          this.movies = response.data.movies;
-        })
-        .catch(() => {
-        });
+      this.movies = response.data.movies;
+      })
+      .catch(() => {
+      });
     },
   },
+  
 };
 </script>
 

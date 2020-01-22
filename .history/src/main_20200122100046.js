@@ -12,7 +12,6 @@ import router from './router';
 
 Vue.use(BootstrapVue);
 Vue.use(Vuetify);
-Vue.use(Vueswal);
 
 Vue.config.productionTip = false;
 

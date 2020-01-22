@@ -95,10 +95,10 @@ export default {
           })
           .catch(() => {
             this.$swal(
-              'Oh oo!',
-              'Could not add the movie!',
-              'error',
-            );
+          'Oh oo!',
+          'Could not add the movie!',
+          'error',
+          );
           });
       }
       return true;

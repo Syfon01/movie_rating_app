@@ -4,7 +4,7 @@ import Home from '@/components/Home';
 import AddMovie from '@/components/AddMovie';
 import Contact from '@/components/Contact';
 import Movie from '@/components/Movie';
-import Register from '@/components/Register';
+
 
 
 Vue.use(Router);
@@ -31,11 +31,6 @@ export default new Router({
       path: '/movies/:id',
       name: 'Movie',
       component: Movie,
-    },
-    {
-      path: '/register',
-      name: 'Register',
-      component: Register,
     },
   ],
 });

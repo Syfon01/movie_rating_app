@@ -7,6 +7,7 @@ import Movie from '@/components/Movie';
 import Register from '@/components/Register';
 
 
+
 Vue.use(Router);
 
 export default new Router({
@@ -33,9 +34,9 @@ export default new Router({
       component: Movie,
     },
     {
-      path: '/register',
-      name: 'Register',
-      component: Register,
+      path: '/movies/:id',
+      name: 'Movie',
+      component: Movie,
     },
   ],
 });

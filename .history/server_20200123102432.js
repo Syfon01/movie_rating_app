@@ -6,18 +6,11 @@ const morgan = require('morgan');
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
-const passportJWT = require("passport-jwt");
-const ExtractJwt = passportJWT.ExtractJwt;
-const JwtStrategy = passportJWT.Strategy;
-const jwtOptions = {};
-jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("jwt");
-jwtOptions.secretOrKey = "movieratingapplicationsecretkey";
 const app = express();
 const router = express.Router();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
-app.use(passport.initialize());
 //connect to mongodb
 mongoose.connect('mongodb://localhost/movie_rating_app', function () {
     console.log('Connection has been made');

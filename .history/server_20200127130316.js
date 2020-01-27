@@ -14,12 +14,11 @@ jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("jwt");
 jwtOptions.secretOrKey = "movieratingapplicationsecretkey";
 const app = express();
 const router = express.Router();
-const serveStatic = require('serve-static');
+const serveStatic = require
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
-
 //connect to mongodb
 mongoose.connect('mongodb://localhost/movie_rating_app', function () {
     console.log('Connection has been made');
@@ -30,13 +29,12 @@ mongoose.connect('mongodb://localhost/movie_rating_app', function () {
   });
   
   // Include controllers
-fs.readdirSync("controllers").forEach(function (file) {
-  if (file.substr(-3) == ".js") {
-    const route = require("./controllers/" + file)
-    route.controller(app)
-  }
-});
-app.use(serveStatic(__dirname + "/dist"));
+  fs.readdirSync("controllers").forEach(function (file) {
+    if (file.substr(-3) == ".js") {
+      const route = require("./controllers/" + file)
+      route.controller(app)
+    }
+  })
 router.get('/', function (req, res) {
   res.json({
     message: 'API Initialized!'

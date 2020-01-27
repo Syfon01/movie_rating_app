@@ -54,7 +54,7 @@ export default {
         .then((response) => {
           window.localStorage.setItem('auth', response.data.token);
           this.$swal('Great!', 'You are ready to start!', 'success');
-          this.$router.push({ name: 'Home' });
+          this.$router.push({ name: 'home' });
         })
         .catch((error) => {
           const message = error.response.data.message;

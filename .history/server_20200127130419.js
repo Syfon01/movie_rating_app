@@ -19,7 +19,6 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
-
 //connect to mongodb
 mongoose.connect('mongodb://localhost/movie_rating_app', function () {
     console.log('Connection has been made');
@@ -36,7 +35,7 @@ fs.readdirSync("controllers").forEach(function (file) {
     route.controller(app)
   }
 });
-app.use(serveStatic(__dirname + "/dist"));
+  app.use(serveStatic(__dirname + "/dist"));
 router.get('/', function (req, res) {
   res.json({
     message: 'API Initialized!'

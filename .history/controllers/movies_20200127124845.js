@@ -2,10 +2,7 @@ const MovieSchema = require('../models/Movie.js');
 const passport = require('passport');
 module.exports.controller = (app) => {
 // fetch all movies
-  app.get('/movies', passport.authenticate('jwt', {
-        session: false
-      }),
-      (req, res) => {
+  app.get('/movies', (req, res) => {
     MovieSchema.find({}, 'name description release_year genre', (error,
       movies) => {
       if (error) {
@@ -17,7 +14,7 @@ module.exports.controller = (app) => {
     });
   });
   // fetch a single movie
-  app.get('/movies/:id', (req, res) => {
+  app.get('/api/movies/:id', (req, res) => {
     MovieSchema.findById(req.params.id, 'name description release_year genre', (error, movie) => {
       if (error) {
         console.error(error);

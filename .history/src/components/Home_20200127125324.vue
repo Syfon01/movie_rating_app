@@ -36,7 +36,7 @@ export default {
       const token = window.localStorage.getItem('auth');
       return axios({
         method: 'get',
-        url: '/movies',
+        url: 'http://localhost:8081/movies',
         headers: {
           Authorization: `JWT ${token}`,
           'Content-Type': 'application/json',
@@ -44,12 +44,12 @@ export default {
       })
         .then((response) => {
           this.movies = response.data.movies;
-          this.current_user = response.data.current_user;
-        })
-        .catch(() => {
-        });
-    },
-  },
+this.current_user = response.data.current_user;
+})
+.catch(() => {
+});
+},
+},
 };
 </script>
 

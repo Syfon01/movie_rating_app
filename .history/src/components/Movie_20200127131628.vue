@@ -94,7 +94,7 @@ export default {
     async fetchMovie() {
       return axios({
         method: 'get',
-        url: `/movies/${this.$route.params.id}`,
+        url: `http://localhost:8081/api/movies/${this.$route.params.id}`,
       })
         .then((response) => {
           this.movie = response.data;

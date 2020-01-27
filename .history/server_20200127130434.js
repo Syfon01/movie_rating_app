@@ -19,7 +19,6 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
-
 //connect to mongodb
 mongoose.connect('mongodb://localhost/movie_rating_app', function () {
     console.log('Connection has been made');
